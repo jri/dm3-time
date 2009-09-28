@@ -1,9 +1,5 @@
 function dm3_time() {
 
-    // alert("Plugin dm3-time loaded!")
-
-    this.name = "dm3-time"
-
     doctype_implementation("vendor/dm3-time/script/time_search_result.js")
     css_stylesheet("vendor/dm3-time/style/dm3-time.css")
 
