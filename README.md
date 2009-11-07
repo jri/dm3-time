@@ -2,6 +2,8 @@
 DeepaMehta 3 Time Plugin
 ========================
 
+Adds timestamps to documents and provides a "By time" search mode.
+
 
 Requirements
 ------------
@@ -17,7 +19,7 @@ Installation
         cd deepamehta3
 2.  Download DeepaMehta 3 Time Plugin:
         couchapp vendor install git://github.com/jri/dm3-time.git
-3.  Add plugin to DeepaMehta 3 by inserting a line to `_attachments/javascript/plugins.js`
+3.  Add plugin to DeepaMehta 3 by inserting a line to `_attachments/javascript/plugins.js`:
         add_plugin("vendor/dm3-time/script/dm3_time.js")
 4.  Add additional stuff by copying a directory:
         cp -r vendor/dm3-time/views/by_time views
