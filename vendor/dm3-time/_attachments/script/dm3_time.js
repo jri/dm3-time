@@ -23,7 +23,8 @@ function dm3_time() {
             var result = db.view("deepamehta3/by_time", {descending: true})
             // build result document
             var fields = [{id: "Title", content: '"' + time_mode + '"'}]
-            var result_doc = create_topic_doc("Search Result", fields, "TimeSearchResult", "images/bucket.png")
+            var view = {icon_src: "images/bucket.png"}
+            var result_doc = create_topic_doc("Search Result", fields, view, "TimeSearchResult")
             result_doc.items = []
             for (var i = 0, row; row = result.rows[i]; i++) {
                 result_doc.items.push({id: row.id, title: row.value, time_modified: row.key})
