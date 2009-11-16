@@ -8,7 +8,6 @@ function dm3_time() {
     }
 
     this.search_widget = function(searchmode) {
-        // alert("search_widget triggered\nsearchmode=" + searchmode)
         if (searchmode == "By time") {
             var select = $("<select>").attr("id", "time_select")
             select.append($("<option>").text("Last week"))
@@ -24,7 +23,7 @@ function dm3_time() {
             // build result document
             var fields = [{id: "Title", content: '"' + time_mode + '"'}]
             var view = {icon_src: "images/bucket.png"}
-            var result_doc = create_topic_doc("Search Result", fields, view, "TimeSearchResult")
+            var result_doc = create_raw_topic("Search Result", fields, view, "TimeSearchResult")
             result_doc.items = []
             for (var i = 0, row; row = result.rows[i]; i++) {
                 result_doc.items.push({id: row.id, title: row.value, time_modified: row.key})
@@ -36,14 +35,12 @@ function dm3_time() {
     //
 
     this.pre_create = function(doc) {
-        // alert("dm3-time: pre_create triggered\ndoc=" + JSON.stringify(doc))
         var time = new Date()
         doc.time_created = time
         doc.time_modified = time
     }
 
     this.pre_update = function(doc) {
-        // alert("dm3-time: pre_update triggered\ndoc=" + JSON.stringify(doc))
         var time = new Date()
         doc.time_modified = time
     }
