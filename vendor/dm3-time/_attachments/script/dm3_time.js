@@ -9,10 +9,10 @@ function dm3_time() {
 
     this.search_widget = function(searchmode) {
         if (searchmode == "By time") {
-            var select = $("<select>").attr("id", "time_select")
-            select.append($("<option>").text("Last week"))
-            select.append($("<option>").text("Last month"))
-            return select
+            return ui.menu("time_select", undefined, [
+                {label: "Last week"},
+                {label: "Last month"}
+            ])
         }
     }
 
