@@ -18,7 +18,7 @@ function dm3_time() {
 
     this.search = function(searchmode) {
         if (searchmode == "By time") {
-            var time_mode = ui.menu_val("time_select").label
+            var time_mode = ui.menu_item("time_select").label
             var result = db.view("deepamehta3/by_time", {descending: true})
             // build result document
             var fields = [{id: "Title", content: '"' + time_mode + '"'}]
