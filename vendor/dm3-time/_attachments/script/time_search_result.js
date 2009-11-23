@@ -10,7 +10,7 @@ TimeSearchResult.prototype = {
         // call super
         var result_item = SearchResult.prototype.render_result_item(item)
         // append our own
-        var time_div = $("<div>").addClass("result_item_time").append(this.format_time(item.time_modified))
+        var time_div = $("<div>").addClass("result-item-time").append(this.format_time(item.time_modified))
         return result_item.append(time_div)
     },
 

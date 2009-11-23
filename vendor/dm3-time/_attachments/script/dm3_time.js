@@ -18,16 +18,25 @@ function dm3_time() {
 
     this.search = function(searchmode) {
         if (searchmode == "By time") {
+            // 1) perform time search
             var time_mode = ui.menu_item("time_select").label
             var result = db.view("deepamehta3/by_time", {descending: true})
-            // build result document
+            // 2) build result document
+            // create result topic
             var fields = [{id: "Title", content: '"' + time_mode + '"'}]
             var view = {icon_src: "images/bucket.png"}
             var result_doc = create_raw_topic("Search Result", fields, view, "TimeSearchResult")
+            // add result items
             result_doc.items = []
             for (var i = 0, row; row = result.rows[i]; i++) {
-                result_doc.items.push({id: row.id, title: row.value, time_modified: row.key})
+                result_doc.items.push({
+                    id:            row.id,
+                    topic_label:   row.value.topic_label,
+                    topic_type:    row.value.topic_type,
+                    time_modified: row.key
+                })
             }
+            //
             return result_doc
         }
     }
