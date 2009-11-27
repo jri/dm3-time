@@ -31,8 +31,8 @@ function dm3_time() {
             for (var i = 0, row; row = result.rows[i]; i++) {
                 result_doc.items.push({
                     id:            row.id,
-                    topic_label:   row.value.topic_label,
-                    topic_type:    row.value.topic_type,
+                    type:          row.value.topic_type,
+                    label:         row.value.topic_label,
                     time_modified: row.key
                 })
             }

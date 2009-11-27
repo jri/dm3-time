@@ -5,13 +5,18 @@ TimeSearchResult.prototype = {
 
     __proto__: SearchResult.prototype,
 
-    // override method
-    render_result_item: function(item) {
-        // call super
-        var result_item = SearchResult.prototype.render_result_item(item)
-        // append our own
-        var time_div = $("<div>").addClass("result-item-time").append(this.format_time(item.time_modified))
-        return result_item.append(time_div)
+    // override
+    render_function: function() {
+        return this.render_topic_with_timestamp
+    },
+
+    render_topic_with_timestamp: function(topic) {
+        // call default render function
+        var topic_div = render_topic(topic)
+        // append timestamp
+        var time = TimeSearchResult.prototype.format_time(topic.time_modified)
+        var time_div = $("<div>").addClass("result-item-time").append(time)
+        return topic_div.append(time_div)
     },
 
     format_time: function(rfc3339_timestamp) {
