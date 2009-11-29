@@ -2,7 +2,7 @@
 DeepaMehta 3 Time Plugin
 ========================
 
-Adds timestamps to documents and provides a "By time" search mode.
+Adds timestamps to documents and provides a "By Time" search mode.
 
 
 Requirements
@@ -32,7 +32,7 @@ Usage
 
 1.  Visit DeepaMehta 3 in your webbrowser (resp. press reload):
         http://localhost:5984/deepamehta3-db/_design/deepamehta3/index.html
-2.  You'll find an additional search mode "By time" in the upper left corner.  
+2.  You'll find an additional search mode "By Time" in the upper left corner.  
     Note: document timestamps are set for documents you create/edit from now on.
 
 

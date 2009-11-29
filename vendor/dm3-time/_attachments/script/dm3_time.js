@@ -4,11 +4,11 @@ function dm3_time() {
     css_stylesheet("vendor/dm3-time/style/dm3-time.css")
 
     this.init = function() {
-        $("#searchmode_select").append($("<option>").text("By time"))
+        $("#searchmode_select").append($("<option>").text("By Time"))
     }
 
     this.search_widget = function(searchmode) {
-        if (searchmode == "By time") {
+        if (searchmode == "By Time") {
             return ui.menu("time_select", undefined, [
                 {label: "Last week"},
                 {label: "Last month"}
@@ -17,27 +17,19 @@ function dm3_time() {
     }
 
     this.search = function(searchmode) {
-        if (searchmode == "By time") {
+        if (searchmode == "By Time") {
             // 1) perform time search
             var time_mode = ui.menu_item("time_select").label
             var result = db.view("deepamehta3/by_time", {descending: true})
-            // 2) build result document
-            // create result topic
-            var fields = [{id: "Title", content: '"' + time_mode + '"'}]
-            var view = {icon_src: "images/bucket.png"}
-            var result_doc = create_raw_topic("Search Result", fields, view, "TimeSearchResult")
-            // add result items
-            result_doc.items = []
-            for (var i = 0, row; row = result.rows[i]; i++) {
-                result_doc.items.push({
+            // 2) create result topic
+            return create_result_topic(time_mode, result, "TimeSearchResult", function(row) {
+                return {
                     id:            row.id,
                     type:          row.value.topic_type,
                     label:         row.value.topic_label,
                     time_modified: row.key
-                })
-            }
-            //
-            return result_doc
+                }
+            })
         }
     }
 
