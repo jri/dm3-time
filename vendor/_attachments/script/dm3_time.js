@@ -20,7 +20,7 @@ function dm3_time() {
         if (searchmode == "By Time") {
             // 1) perform time search
             var time_mode = ui.menu_item("time_select").label
-            var result = db.view("deepamehta3/by_time", {descending: true})
+            var result = db.view("deepamehta3/dm3-time", {descending: true})
             // 2) create result topic
             return create_result_topic(time_mode, result, "TimeSearchResult", function(row) {
                 return {

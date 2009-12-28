@@ -25,7 +25,7 @@ Installation
         add_plugin("vendor/dm3-time/script/dm3_time.js")
 
 4.  Add additional stuff by copying a directory:
-        cp -r vendor/dm3-time/views/by_time views
+        cp -r vendor/dm3-time/views/dm3-time views
 
 5.  Upload changes to CouchDB:
         couchapp push http://localhost:5984/deepamehta3-db
@@ -49,4 +49,4 @@ Version History
 
 ------------
 Jörg Richter  
-Dec 1, 2009
+Dec 28, 2009
