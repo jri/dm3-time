@@ -12,7 +12,7 @@ function dm3_time() {
             return ui.menu("time_select", undefined, [
                 {label: "Last week"},
                 {label: "Last month"}
-            ])
+            ]).dom
         }
     }
 
