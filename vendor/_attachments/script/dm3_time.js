@@ -22,7 +22,7 @@ function dm3_time() {
             var time_mode = ui.menu_item("time_select").label
             var result = db.view("deepamehta3/dm3-time", {descending: true})
             // 2) create result topic
-            return create_result_topic(time_mode, result, "TimeSearchResult", function(row) {
+            return create_result_topic(time_mode, result.rows, "TimeSearchResult", function(row) {
                 return {
                     id:            row.id,
                     type:          row.value.topic_type,
