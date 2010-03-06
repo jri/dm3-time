@@ -3,6 +3,14 @@ function dm3_time() {
     doctype_implementation("vendor/dm3-time/script/time_search_result.js")
     css_stylesheet("vendor/dm3-time/style/dm3-time.css")
 
+
+
+    /**************************************************************************************************/
+    /**************************************** Overriding Hooks ****************************************/
+    /**************************************************************************************************/
+
+
+
     this.init = function() {
         $("#searchmode_select").append($("<option>").text("By Time"))
     }
